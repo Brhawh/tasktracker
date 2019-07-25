@@ -1,11 +1,16 @@
 plugins {
-    kotlin("jvm") version "1.3.41"
+    application
+    kotlin("jvm") version "1.3.21"
 }
 
-repositories {
-    mavenCentral()
+application {
+    mainClassName = "Main"
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
+    compile(kotlin("stdlib"))
+}
+
+repositories {
+    jcenter()
 }
