@@ -10,6 +10,7 @@ class Task (private val title: String,
     private var daysRemaining: Long = 0
     private var hoursRemaining: Long = 0
     private var minutesRemaining: Long = 0
+    var id: Int = -1
 
     init {
         updateTimeRemaining()
@@ -22,6 +23,10 @@ class Task (private val title: String,
         hoursRemaining = diff.toHours()
         diff = diff.minusHours(hoursRemaining)
         minutesRemaining = diff.toMinutes()
+    }
+
+    fun complete() {
+        completed = true
     }
 
     fun printTask() {
